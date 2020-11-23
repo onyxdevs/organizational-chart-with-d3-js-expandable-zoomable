@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+/*
+Nugget Name: Organizational chart with D3.js, expandable, zoomable, and fully initialized (Holding Company Tree Chart)
+Nugget URI: https://onyxdev.net/snippets-item/organizational-chart-with-d3-js-expandable-zoomable-and-fully-initialized/
+Author: Obada Qawwas
+Author URI: https://www.onyxdev.net/
+Version: 1.0
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2020 Onyx Web Development
+*/
+
+/************************************************************
+
+    Main Styles
+
+*************************************************************/
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+    text-rendering: optimizeLegibility;
+    background-color: #fff;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    color: #000;
+    font-size: 0.875rem;
+    letter-spacing: 0.01rem;
+    background-color: transparent;
+    margin: 0;
+}
+
+/************************************************************
+
+    Main wrapper
+
+*************************************************************/
+.main {
+    position: relative;
+    width: 100vw;
+}
+
+/************************************************************
+
+    Prevent browsing with no JS
+
+*************************************************************/
+html.no-js {
+    overflow: hidden;
+}
+.no-js-note {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.35;
+    overflow: hidden;
+    z-index: 99;
+}
+
+/************************************************************
+
+    Organizational chart
+
+*************************************************************/
+.chart-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.tree-chart__card {
+    padding: 14px;
+}
+
+.tree-chart__card__title {
+    margin-left: 68px;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.tree-chart__card__after-title {
+    margin-left: 68px;
+    margin-top: 3px;
+    font-size: 0.875rem;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.tree-chart__card__share {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    font-weight: 600;
+}
+
+.tree-chart .node-icon-text-total,
+.tree-chart .node-icon-text-direct {
+    opacity: 0.5;
+}
+
+.node--no-subsidiaries .node-icon-text-total,
+.node--no-subsidiaries .node-icon-text-direct,
+.node--no-subsidiaries .node-icon-image {
+    display: none;
+}
