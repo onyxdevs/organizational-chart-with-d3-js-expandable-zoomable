@@ -6,6 +6,8 @@ Read the [full article](https://onyxdev.net/snippets-item/organizational-chart-w
 
 ## Credits
 
-[D3.js](https://d3js.org/)  
-[Source Sans Pro font](https://fonts.google.com/specimen/Source+Sans+Pro)  
-[Main code by Julien Henri Reszka](https://observablehq.com/@julienreszka/d3-v5-org-chart)
+[D3.js](https://d3js.org/)<br />
+[Source Sans Pro font](https://fonts.google.com/specimen/Source+Sans+Pro)<br />
+[Original code by Julien Henri Reszka](https://observablehq.com/@julienreszka/d3-v5-org-chart)
+
+## `Stay safe 😷`
