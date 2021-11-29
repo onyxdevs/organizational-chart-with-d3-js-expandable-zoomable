@@ -160,9 +160,7 @@ function Chart() {
             .attr('transform', `translate(${calc.centerX},${calc.nodeMaxHeight / 2}) scale(${attrs.initialZoom})`);
 
         if (attrs.lastTransform) {
-            behaviors.zoom
-                .scaleBy(chart, attrs.lastTransform.k)
-                .translateTo(chart, attrs.lastTransform.x, attrs.lastTransform.y);
+            behaviors.zoom.scaleBy(chart, attrs.lastTransform.k).translateTo(chart, attrs.lastTransform.x, attrs.lastTransform.y);
         }
 
         const defs = svg.patternify({
@@ -183,11 +181,7 @@ function Chart() {
             .attr('height', `${200}%`)
             .attr('width', `${200}%`);
 
-        filter
-            .patternify({ tag: 'feGaussianBlur', selector: 'feGaussianBlur-element' })
-            .attr('in', 'SourceAlpha')
-            .attr('stdDeviation', 3.1)
-            .attr('result', 'blur');
+        filter.patternify({ tag: 'feGaussianBlur', selector: 'feGaussianBlur-element' }).attr('in', 'SourceAlpha').attr('stdDeviation', 3.1).attr('result', 'blur');
 
         filter
             .patternify({ tag: 'feOffset', selector: 'feOffset-element' })
@@ -281,9 +275,7 @@ function Chart() {
             const path = `
             M ${x} ${y}
             L ${x} ${y + h * yrvs}
-            C  ${x} ${y + h * yrvs + r * yrvs} ${x} ${y + h * yrvs + r * yrvs} ${x + r * xrvs} ${
-                y + h * yrvs + r * yrvs
-            }
+            C  ${x} ${y + h * yrvs + r * yrvs} ${x} ${y + h * yrvs + r * yrvs} ${x + r * xrvs} ${y + h * yrvs + r * yrvs}
             L ${x + w * xrvs + r * xrvs} ${y + h * yrvs + r * yrvs}
             C ${ex}  ${y + h * yrvs + r * yrvs} ${ex}  ${y + h * yrvs + r * yrvs} ${ex} ${ey - h * yrvs}
             L ${ex} ${ey}`;
@@ -544,9 +536,7 @@ function Chart() {
                 .text('test')
                 .attr('x', (d) => -d.width / 2 + 14)
                 .attr('y', (d) => d.height / 2 - d.data.nodeIcon.size - 8)
-                .text(
-                    (d) => d.data.totalSubsidiaries + (d.data.totalSubsidiaries === 1 ? ' Subsidiary' : ' Subsidiaries')
-                )
+                .text((d) => d.data.totalSubsidiaries + (d.data.totalSubsidiaries === 1 ? ' Subsidiary' : ' Subsidiaries'))
                 .attr('fill', attrs.nodeTextFill)
                 .attr('font-weight', '600')
                 .attr('font-family', attrs.defaultFont);
